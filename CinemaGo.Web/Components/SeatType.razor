@@ -1,0 +1,85 @@
+<h3>SeatType</h3>
+@using CinemaGo.DataModels.CustomModels;
+@using CinemaGo.Web.Services;
+@inject IUserPanelService userPanelService;
+@inject ProtectedSessionStorage sessionStorage;
+@inject NavigationManager navManager;
+
+<div class="container py-4">
+    <h2 class="text-center font-weight-light">Adult</h2>
+    <div class="row">
+        <div class="col-sm-3 mx-auto">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                        <span class="fa fa-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-center font-weight-light">Senior Citizen</h2>
+    <div class="row">
+        <div class="col-sm-3 mx-auto">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                        <span class="fa fa-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-center font-weight-light">Kids</h2>
+    <div class="row">
+        <div class="col-sm-3 mx-auto">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                        <span class="fa fa-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-center font-weight-light">Oku</h2>
+    <div class="row">
+        <div class="col-sm-3 mx-auto">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                        <span class="fa fa-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+   
+}

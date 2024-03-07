@@ -1,0 +1,119 @@
+
+
+@using CinemaGo.DataModels.CustomModels;
+@using CinemaGo.Web.Services;
+@inject IUserPanelService userPanelService;
+@inject ProtectedSessionStorage sessionStorage;
+@inject NavigationManager navManager;
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+<div class="card-body">
+    @if (productList == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+<ul class="list-unstyled">
+    <p class="text-center" style="font-size:x-large; text-decoration-line:underline" >Now Showing Movies</p>
+    @foreach (var (index, prod) in productList.Select((prod, i) => (i + 1, prod)))
+    {
+        <li class="media my-3">
+            <div class="container mt-5 ">
+                <form class=" row g-3 ">
+                    <div class=" col-md-3">
+                        <div class="media-img-wrapper mr-3">
+                            <a href="/product/@prod.Name">
+                                <img class="media-img" src="http://localhost:36313/@prod.ImageUrl" alt="@prod.Name" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" col-md-9">
+                        <div class="media-body align-content-start ">
+                            <b>Title </b>
+                            <br>
+                            @prod.Name
+                            <br>
+                            <b>Description </b>
+                            <br>
+                            @prod.Description
+                            <br>
+                            <b>Release Date </b>
+                            <br>
+                            @prod.ReleaseDate
+                            <br>
+                            <b>Language </b>
+                            <br>
+                            @prod.Language
+                            <br>
+                            <b>Running Time </b>
+                            <br>
+                            @prod.RunningTime
+                            <br>
+                            <p><a href="@prod.TrailerUrl" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">[Trailer]</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    }
+</ul>
+
+    }
+</div>
+
+
+
+@code {
+
+    [CascadingParameter]
+    public EventCallback notify { get; set; }
+    public ProductModel productModel { get; set; }
+    public List<ProductModel> products { get; set; }
+    public List<ProductModel> productList { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        productModel = new ProductModel();
+        await GetProducts();
+    }
+
+    private async Task GetProducts()
+    {
+        productList = await userPanelService.GetProducts();
+    }
+
+
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (firstRender)
+            {
+                await notify.InvokeAsync();
+            }
+        }
+
+    }
+}

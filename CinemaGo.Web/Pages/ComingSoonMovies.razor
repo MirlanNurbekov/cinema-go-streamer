@@ -1,0 +1,178 @@
+@page "/comingsoonmovies"
+
+<h3>ComingSoonMovies</h3>
+
+<ul class="list-unstyled">
+    @foreach (var UProduct in products)
+    {
+        <li class="media my-3">
+            <div class="container mt-5 ">
+                <form class=" row g-3 ">
+                    <div class=" col-md-2">
+                        <div class="media-img-wrapper mr-3">
+                            <a href="/product/@UProduct.Id">
+                                <img class="media-img" src="@UProduct.Image" alt="@UProduct.Title" />
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class=" col-md-10">
+                        <div class="media-body align-content-start ">
+                            <b>Title </b>
+                            <br>
+                            @UProduct.Title
+                            <br>
+                            <b>Description </b>
+                            <br>
+                            @UProduct.Description
+                            <br>
+                            <b>Release Date </b>
+                            <br>
+                            @UProduct.ReleaseDate
+                            <br>
+                            <b>Language </b>
+                            <br>
+                            @UProduct.Language
+                            <br>
+                            <b>Genre </b>
+                            <br>
+                            @UProduct.Genre
+                            <br>
+                            <b>Running Time </b>
+                            <br>
+                            @UProduct.RunningTime
+                            <br>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+    List<UProduct> products = new List<UProduct>
+    {
+                 new UProduct
+                {
+                    Id = "Saw X",
+                    CategoryId = 1,
+                    Title = "Saw X",
+                    Description = "As his kingdom is being threatened by the Turks, young prince Vlad Tepes must become a monster feared by his own people in order to obtain the power needed to protect his own family, and the families of his kingdom.",
+                    Image = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/41d3b880123243.5cd86d80c4873.jpg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 9,
+                    OriginalPrice = 12,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+
+                },
+                 new UProduct
+                {
+                    Id = "Luci",
+                    CategoryId = 1,
+                    Title = "Luci",
+                    Description = "A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.",
+                    Image = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f709b980123243.5cd86d8070fa7.jpg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "11 November 2023",
+                    RunningTime = "2 Hours 10 Min"
+                },
+                new UProduct
+                {
+                    Id = "Avengers",
+                    CategoryId = 1,
+                    Title = "Avengers",
+                    Description = "Earth's Mightiest Heroes stand as the planet's first line of defense against the most powerful threats in the universe. The Avengers began as a group of extraordinary individuals who were assembled to defeat Loki and his Chitauri army in New York City.",
+                    Image = "https://www.vintagemovieposters.co.uk/wp-content/uploads/2023/03/IMG_1887-scaled.jpeg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },
+                new UProduct
+                {
+                    Id = "Deadpool",
+                    CategoryId = 1,
+                    Title = "Deadpool",
+                    Description = "Wade Wilson (Ryan Reynolds) is a former Special Forces operative who now works as a mercenary. His world comes crashing down when evil scientist Ajax (Ed Skrein) tortures, disfigures and transforms him into Deadpool. The rogue experiment leaves Deadpool with accelerated healing powers and a twisted sense of humor.",
+                    Image = "https://i.ebayimg.com/images/g/qYYAAOSw1odgo4~~/s-l1600.jpg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },
+                new UProduct
+                {
+                    Id = "Oppenheimer",
+                    CategoryId = 1,
+                    Title = "Oppenheimer",
+                    Description = "It stars Cillian Murphy as J. Robert Oppenheimer, the American theoretical physicist credited with being the 'father of the atomic bomb' for his role in the Manhattan Project—the World War II undertaking that developed the first nuclear weapons.",
+                    Image = "https://artofthemovies.co.uk/cdn/shop/products/IMG_2672-955819.jpg?v=1686847908",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },
+                new UProduct
+                {
+                    Id = "Jaws",
+                    CategoryId = 1,
+                    Title = "Jaws",
+                    Description = "When a killer shark unleashes chaos on a beach community off Cape Cod, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+                    Image = "https://www.companyfolders.com/blog/media/2017/07/jaws.jpg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },new UProduct
+                {
+                    Id = "Barbie",
+                    CategoryId = 1,
+                    Title = "Barbie",
+                    Description = "Set in the colorful Barbie Land, stereotypical Barbie lives a perfect life every single day. One day, she shows signs of being...a human. She decides to go to the Real World to find the cure in order to make herself perfect again.",
+                    Image = "https://variety.com/wp-content/uploads/2023/04/Fs3w6bIaYAA0TEb.jpeg?w=800",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },new UProduct
+                {
+                    Id = "Brave",
+                    CategoryId = 1,
+                    Title = "Brave",
+                    Description = "Merida (Kelly Macdonald), the impetuous but courageous daughter of Scottish King Fergus (Billy Connolly) and Queen Elinor (Emma Thompson), is a skilled archer who wants to carve out her own path in life. Her defiance of an age-old tradition angers the Highland lords and leads to chaos in the kingdom.",
+                    Image = "https://www.jovoto.com/wp-content/uploads/2016/09/Brave-movie-poster.jpg",
+                    DateCreated = new DateTime(2021, 1, 1),
+                    Price = 22,
+                    OriginalPrice = 19,
+                    Genre ="Action",
+                    Language = "English",
+                    ReleaseDate = "10 November 2023",
+                    RunningTime = "2 Hours 30 Min"
+                },
+    };
+
+}

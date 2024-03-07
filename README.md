@@ -1,0 +1,1 @@
+Sample for one of clients, need to rework some portions 
